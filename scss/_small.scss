@@ -1,0 +1,383 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} // end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+    background-color: $gray-100; // Light background
+    color: $gray-800; // Dark text for good contrast
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {
+    border-bottom: 1px solid $gray-300;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba($gray-500, 0.15);
+}
+header {
+    display: grid;
+    grid-template-columns: 40px 1fr auto; // Smaller logo column for mobile
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    position: relative; // For positioning phone icon
+    
+    img {
+        height: 32px; // Small logo for mobile screens
+        width: auto; // Maintain aspect ratio
+    }
+    
+    span {
+        font-size: 1.4rem; // Slightly smaller text for mobile
+        font-weight: $lightWeight;
+        color: $gray-800;
+    }
+    
+    svg {
+        display: none; // Hide phone icon on small screens
+    }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+// Button styling
+#btn {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+    position: fixed; // Fixed to viewport instead of relative to parent
+    top: $gutter; // Small margin from top
+    right: $gutter; // Small margin from right
+    min-width: 44px; // Meet acceptable size requirements
+    min-height: 44px; // Meet acceptable size requirements
+    z-index: 101; // Ensure button stays above everything
+    
+    &::before {
+        content: '\2630'; // Hamburger entity
+    }
+    
+    &.open::before {
+        content: '\2715'; // Close X entity
+    }
+}
+
+// Navigation wrapper
+#navWrapper {
+    z-index: 100; // Ensure nav stays above hero image
+}
+
+// Navigation styling
+nav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+    z-index: 99; // Ensure nav menu stays above content
+    
+    &.open {
+        grid-template-rows: 1fr;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        
+        li {
+            a {
+                display: block;
+                width: 100%;
+                padding: 1rem $gutter;
+                text-decoration: none;
+                color: $gray-700;
+                border-bottom: 1px solid $gray-200;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    color: $primaryColor;
+                    background-color: $gray-100;
+                }
+            }
+            
+            &.active a {
+                color: $primaryColor;
+                background-color: $gray-200;
+                font-weight: $normalWeight;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    background-color: white;
+    margin: 0 auto;
+    
+    h1 {
+        padding: 1rem $gutter .5rem $gutter;
+        font-size: 1.5rem;
+        color: $gray-800;
+        font-weight: $normalWeight;
+        margin: 0; // Remove default margin
+    }
+    p {
+        padding: .5rem $gutter;
+        color: $gray-600;
+        line-height: $leading;
+    }
+}// end main
+
+/* --------------------------- SERVICES SECTION --------------------------- */
+.services-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem $gutter;
+    background-color: $gray-100;
+    margin: 2rem 0;
+}
+
+.service-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba($gray-500, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $gray-200;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba($gray-600, 0.15);
+    }
+    
+    svg {
+        color: $primaryColor;
+        margin-bottom: 1.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    &:hover svg {
+        color: $secondaryColor;
+        transform: scale(1.1);
+    }
+    
+    h3 {
+        color: $gray-800;
+        font-size: 1.4rem;
+        font-weight: $normalWeight;
+        margin: 0 0 1rem 0;
+    }
+    
+    p {
+        color: $gray-600;
+        line-height: $leading;
+        margin: 0 0 2rem 0;
+        padding: 0; // Override main p styling
+    }
+    
+    .service-btn {
+        background-color: $primaryColor;
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 6px;
+        font-weight: $normalWeight;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        font-size: 1rem;
+        
+        &:hover {
+            background-color: $secondaryColor;
+            transform: translateY(-1px);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* --------------------------- REVIEWS SECTION --------------------------- */
+.review-wrapper {
+    background-color: $gray-200;
+    padding: 2rem $gutter;
+    margin: 2rem 0;
+    
+    h2 {
+        text-align: center;
+        color: $gray-800;
+        font-weight: $normalWeight;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+#cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.review-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba($gray-500, 0.1);
+    border-left: 4px solid $primaryColor;
+    
+    h3 {
+        color: $gray-800;
+        font-size: 1.2rem;
+        font-weight: $normalWeight;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .star-rating {
+        margin-bottom: 1rem;
+        
+        .star {
+            margin-right: 2px;
+            
+            &.filled {
+                color: #ffc107; // Gold color for filled stars
+            }
+            
+            &.empty {
+                color: $gray-300; // Light gray for empty stars
+            }
+        }
+    }
+    
+    p {
+        color: $gray-600;
+        line-height: $leading;
+        margin: 0;
+        font-style: italic;
+        padding: 0; // Override main p styling
+    }
+}
+
+/* --------------------------- HERO SECTION --------------------------- */
+.hero {
+    position: relative; // Allow absolute positioning of children
+    z-index: 1; // Keep hero below navigation
+    
+    img {
+        width: 100%; // Responsive image
+        height: auto; // Maintain aspect ratio  
+        display: block; // Remove gap below image
+    }
+    
+    p {
+        position: absolute; // Position over the image
+        top: calc(50% - 35px); // Center vertically (50% minus half of text height)
+        left: 10%; // 10% from left
+        width: 80%; // 80% width leaves 10% on each side
+        margin: 0; // Remove default margin
+        // Semi-transparent gradient background using new gray palette
+        background: linear-gradient(90deg, 
+            rgba($gray-100, 0) 0%, 
+            rgba($gray-100, 0.95) 25%, 
+            rgba($gray-100, 0.95) 75%, 
+            rgba($gray-100, 0) 100%);
+        padding: 1rem; // Add padding for readability
+        text-align: center; // Center the text
+        color: $gray-800; // Dark text using new palette
+        font-size: 1.1rem; // Larger text
+        font-weight: $normalWeight; // Medium weight
+        border-radius: 4px; // Subtle rounded corners
+    }
+    
+}
+
+// Alternative hero positioning classes (following professor's examples)
+
+// Text at the top
+.hero-top {
+    p {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+// Text at the bottom  
+.hero-bottom {
+    p {
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+// Full width with solid background
+.hero-full {
+    p {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $gray-800;
+    border-top: 1px solid $gray-300;
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $gray-300;
+    text-align: center;
+    line-height: $leading;
+    a {
+        color: $gray-400;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: $gray-200;
+        }
+    }
+}// end footer

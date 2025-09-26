@@ -1,0 +1,85 @@
+header, nav {
+    max-width: 1400px; // Wider container for navigation
+    margin: auto;
+    padding-left: 2rem; // More generous side padding
+    padding-right: 2rem;
+}
+
+/* Larger header elements */
+header {
+    grid-template-columns: 80px 1fr auto; // Large logo column for desktop
+    
+    img {
+        height: 56px; // Large logo for desktop screens (3x version size)
+    }
+    
+    span {
+        font-size: 2.2rem; // Large brand text for desktop
+    }
+}
+
+main {
+    max-width: none; // Remove main width constraint for full-width hero
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+
+/* --------------------------- HERO SECTION --------------------------- */
+.hero {
+    // Full width hero on large screens
+    width: 100vw; // Full viewport width
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    img {
+        width: 100%;
+        min-height: 70vh; // Taller hero image
+        object-fit: cover; // Maintain aspect ratio while covering area
+    }
+    
+    p {
+        font-size: 3.5rem; // Even larger text for large screens
+        padding: 2rem; // Maximum padding
+        top: calc(50% - 50px); // Adjust for larger text height
+        max-width: 1200px; // Limit text width for readability
+        margin: 0 auto; // Center the text container
+        left: 0;
+        right: 0;
+        width: auto;
+    }
+}
+
+/* Content sections with wider containers */
+main {
+    h1, p {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* --------------------------- SERVICES SECTION --------------------------- */
+.services-section {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+}
+
+/* --------------------------- REVIEWS SECTION --------------------------- */
+.review-wrapper {
+    max-width: 1400px; // Wider container for reviews
+    margin: 2rem auto;
+    padding: 3rem 2rem; // More generous padding
+}
+
+#cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; // More space between cards
+    max-width: 1300px;
+    margin: 0 auto;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452.94 450.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #343a40; /* Using your gray-800 */
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #212529; /* Using your gray-900 */
+        stroke-miterlimit: 10;
+        stroke-width: 3px; /* Slightly thinner stroke */
+      }
+
+      .cls-2 {
+        fill: #495057; /* Using your gray-700 */
+      }
+
+      .cls-3 {
+        fill: #6c757d; /* Using your gray-600 */
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <polygon class="cls-2" points="207 355.96 85.82 381.84 2.82 289.84 41 171.96 162.17 146.08 245.17 238.08 207 355.96"/>
+    <polygon class="cls-3" points="366.39 212.63 245.22 238.51 162.22 146.51 200.39 28.63 321.57 2.75 404.57 94.75 366.39 212.63"/>
+    <polygon class="cls-1" points="411.94 422.33 290.77 448.21 207.77 356.21 245.94 238.33 367.12 212.45 450.12 304.45 411.94 422.33"/>
+  </g>
+</svg>

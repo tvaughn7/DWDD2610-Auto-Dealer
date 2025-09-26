@@ -1,0 +1,79 @@
+/* NAVIGATION STUFF GOES HERE  */
+
+// Hide button for medium screens and above
+#btn {
+    display: none;
+}
+
+// Medium screen header adjustments
+header {
+    grid-template-columns: 60px 1fr auto; // Medium logo column
+    
+    img {
+        height: 42px; // Medium logo size for tablet screens
+    }
+    
+    span {
+        font-size: 1.8rem; // Medium text size
+    }
+}
+
+// Reposition phone icon for medium screens
+header svg {
+    display: block; // Show phone icon on medium screens and above
+    position: static; // Back to normal positioning
+    background-color: transparent; // Remove background
+    padding: 0; // Remove padding
+    border-radius: 0; // Remove border radius
+}
+
+// Navigation for medium screens
+nav {
+    grid-template-rows: 1fr; // Always show menu
+    
+    ul {
+        display: flex;
+        
+        li {
+            a {
+                border-bottom: none;
+                border-bottom: 2px solid transparent; // Default underline
+                color: $gray-700;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    border-bottom: 2px solid $primaryColor;
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+// Add border below nav wrapper for consistency
+#navWrapper {
+    border-bottom: 1px solid $gray-200;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba($gray-500, 0.1);
+}
+
+/* --------------------------- SERVICES SECTION --------------------------- */
+.services-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem $gutter;
+}
+
+/* --------------------------- HERO SECTION --------------------------- */
+.hero {
+    p {
+        font-size: 2.5rem; // Larger text for medium screens
+        padding: 1.5rem; // More padding
+    }
+}
+
+/* --------------------------- REVIEWS SECTION --------------------------- */
+#cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
