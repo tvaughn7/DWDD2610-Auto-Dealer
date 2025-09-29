@@ -62,7 +62,7 @@ header {
     font-size: 2rem;
     padding: 0;
     cursor: pointer;
-    position: fixed; // Fixed to viewport instead of relative to parent
+    position: absolute; // Fixed to viewport instead of relative to parent
     top: $gutter; // Small margin from top
     right: $gutter; // Small margin from right
     min-width: 44px; // Meet acceptable size requirements
