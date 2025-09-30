@@ -349,16 +349,6 @@ header span {
 header svg {
   display: none;
 }
-header .phone-link {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-header .phone-link:hover {
-  transform: scale(1.1);
-}
-header .phone-link:hover svg {
-  fill: #7c1d47;
-}
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #btn {
